@@ -41,51 +41,57 @@
         </div>
     </div>
 </div>
-<div id="projects">
-    <h1>My Projects</h1>
-
-    <section class="projects-section">
-        <div class="project-card" id="web-project">
-            <div class="project-info">
-                <h3>Web Development Projects</h3>
-                <p>Click to view the projects</p>
-                <button class="btn" onclick="toggleDetails('web-project-details')">View Projects</button>
-            </div>
-            <div class="project-details" id="web-project-details" style="display: none;">
-                <h4>Projects Using HTML,CSS and JS</h4>
-                <a href="https://github.com/susangautam/Web-Dev-Challange">Click Here For Source Codes</a><br>
-                <img src="/images/calculaor.png" alt="">
-                <img src="/images/clock.png" alt="">
-                <img src="/images/password.png" alt=""><br>
-                <img src="/images/twitter.png" alt="">
-                <img src="/images/light.png" alt="">
-                <img src="/images/tick-tac.png" alt="">
-                
-
+<div class="projects">
+    <div class="project-header">
+        <h1>My Projects</h1>
+    </div>
+    <div class="all-projects">
+        <div class="projects-section">
+            <div class="project-card" id="web-project">
+                <div class="project-info">
+                    <h3 id="web">Web Development Projects</h3>
+                </div>
+                <div class="project-details" id="web-project-details">
+                    <div class="carousel" id="web-carousel">
+                        <img src="/images/calculator.png" alt="">
+                        <img src="/images/clock.png" alt="">
+                        <img src="/images/password.png" alt="">
+                        <img src="/images/login.png" alt="">
+                        <img src="/images/light.png" alt="">
+                        <img src="/images/tick-tac.png" alt="">
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="btn-prev" onclick="changeSlide('web-carousel', 'prev')">&#8249;</button>
+                        <button class="btn-next" onclick="changeSlide('web-carousel', 'next')">&#8250;</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
 
-    <section class="projects-section">
-        <div class="project-card" id="graphics-project">
-            <div class="project-info">
-                <h3>Graphics Designing Projects</h3>
-                <p>Click to view the projects</p>
-                <button class="btn" onclick="toggleDetails('graphics-project-details')">View Projects</button>
-            </div>
-            <div class="project-details" id="graphics-project-details" style="display: none;">
-                <h4>TickIT Solutions</h4>
-                <p>I made logo,social media posts,visiting card,pamplets for TickIT Solutions. </p>
-                <img src="/images/logo-01.png" alt="">
-                <img src="/images/designing expert-01-01.jpg" alt="">
-                <img src="/images/id cardfinal-01.png" alt=""><br>
-                <img src="/images/we are hiring-01.png" alt="">
-                <img src="/images/visiting-01.png" alt="">                
-                <img src="/images/Designing-01.png" alt="">
-            
+        <div class="projects-section">
+            <div class="project-card" id="graphics-project">
+                <div class="project-info">
+                    <h3 id="graphics">Graphics Designing Projects</h3>
+                </div>
+                <div class="project-details" id="graphics-project-details">
+                    <div class="carousel" id="graphics-carousel">
+                        <img src="/images/logo-01.png" alt="">
+                        <img src="/images/designing expert-01-01.jpg" alt="">
+                        <img src="/images/id cardfinal-01.png" alt="">
+                        <img src="/images/we are hiring-01.png" alt="">
+                        <img src="/images/visiting-01.png" alt="">
+                        <img src="/images/Designing-01.png" alt="">
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="btn-prev" onclick="changeSlide('graphics-carousel', 'prev')">&#8249;</button>
+                        <button class="btn-next" onclick="changeSlide('graphics-carousel', 'next')">&#8250;</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
+
         <div id="skills">
                 <h2>Skills</h2>
                 <div class="skills">
@@ -99,11 +105,6 @@
         
     </section>
 </div>
-
-
-    
- 
-    
 
     <script src="/js/script.js"></script>
 </body>

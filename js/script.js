@@ -67,12 +67,55 @@ const textElement = document.getElementById('typewriter-text');
 const texts = ["Graphics Designer", "Web Developer"];
 typeWriterEffect(textElement, texts, 100); 
 
-function toggleDetails(projectId) {
-    var projectDetails = document.getElementById(projectId);
-    if (projectDetails.style.display === "none") {
-        projectDetails.style.display = "block";
-    } else {
-        projectDetails.style.display = "none";
-    }
+function changeSlide(carouselId, direction) {
+  var carousel = document.getElementById(carouselId);
+  var slides = carousel.querySelectorAll("img");
+  var currentSlide = Array.from(slides).findIndex(slide => slide.style.display !== "none");
+
+  if (direction === 'next') {
+      var nextSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].style.display = "none";
+      slides[nextSlide].style.display = "block";
+  } else if (direction === 'prev') {
+      var prevSlide = (currentSlide - 1 + slides.length) % slides.length;
+      slides[currentSlide].style.display = "none";
+      slides[prevSlide].style.display = "block";
+  }
 }
 
+
+let buttons = document.querySelectorAll(".skill-btn");
+
+for (var i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", (e) => {
+    e.preventDefault();
+    
+    let overlay = document.createElement('span');
+    overlay.classList.add("overlay");
+    e.target.appendChild(overlay);
+    
+    let xValue = e.clientX - e.target.getBoundingClientRect().left;
+    let yValue = e.clientY - e.target.getBoundingClientRect().top;
+    
+    overlay.style.left = xValue + "px";
+    overlay.style.top = yValue + "px";
+    
+    setTimeout(() => {
+      overlay.remove();
+    }, 500);
+  });
+}
+
+let skillsButton = document.querySelectorAll(".skill-btn");
+for (var i = 0; i < skillsButton.length; i++) {
+  skillsButton[i].addEventListener("click", (e)=>{
+    e.preventDefault();
+    let overlay = document.createElement('span');
+    overlay.classList.add("overlay");
+    e.target.appendChild(overlay);
+    let xValue = e.clientX - e.target.offsetLeft;
+    let yValue = e.clientY - e.target.offsetTop;
+    overlay.style.left = xValue + "px";
+    overlay.style.top = yValue + "px";
+  });
+}
