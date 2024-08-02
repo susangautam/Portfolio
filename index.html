@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Susan Gautam </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <a id="scroll-to-top" href="#home"><span><i class='bx bx-up-arrow-alt'></i></span></a>
+    <div  id="home">
+    <header>
+        <div class="navbar">
+            <a href="#home" class="link"> Home</a>
+            <a href="#projects" class="link">Projects</a>
+            <a href="#skills" class="link">Skills</a>
+            <a href="experience" class="link">Experience</a>
+            <a href="#about" class="link">About</a>
+        </div>
+    </header>
+    
+    <div class="home">
+        <div class="left">
+            <div class="text">
+                <p>Hello,<br> I'm Susan Gautam</p>
+            </div>
+            <hr>
+            <div class="typewriter">
+                <h1 id="typewriter-text"></h1>
+                <div class="icons">
+                    <a href="https://www.facebook.com/xuxantgtm" class="link"><span><i class='bx bxl-facebook-circle'></i></span></a>
+                    <a href="https://github.com/susangautam" class="link"><span><i class='bx bxl-github' ></i></span></a>
+                    <a href="https://www.linkedin.com/in/susan-gautam-20502b311/" class="link"><span><i class='bx bxl-linkedin'></i></span></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image">
+            <img src="/images/image.jpg" alt="">
+        </div>
+    </div>
+</div>
+<div class="projects">
+    <div class="project-header">
+        <h1>My Projects</h1>
+    </div>
+    <div class="all-projects">
+        <div class="projects-section">
+            <div class="project-card" id="web-project">
+                <div class="project-info">
+                    <h3 id="web">Web Development Projects</h3>
+                </div>
+                <div class="project-details" id="web-project-details">
+                    <div class="carousel" id="web-carousel">
+                        <img src="/images/calculator.png" alt="">
+                        <img src="/images/clock.png" alt="">
+                        <img src="/images/password.png" alt="">
+                        <img src="/images/login.png" alt="">
+                        <img src="/images/light.png" alt="">
+                        <img src="/images/tick-tac.png" alt="">
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="btn-prev" onclick="changeSlide('web-carousel', 'prev')">&#8249;</button>
+                        <button class="btn-next" onclick="changeSlide('web-carousel', 'next')">&#8250;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="projects-section">
+            <div class="project-card" id="graphics-project">
+                <div class="project-info">
+                    <h3 id="graphics">Graphics Designing Projects</h3>
+                </div>
+                <div class="project-details" id="graphics-project-details">
+                    <div class="carousel" id="graphics-carousel">
+                        <img src="/images/logo-01.png" alt="">
+                        <img src="/images/designing expert-01-01.jpg" alt="">
+                        <img src="/images/id cardfinal-01.png" alt="">
+                        <img src="/images/we are hiring-01.png" alt="">
+                        <img src="/images/visiting-01.png" alt="">
+                        <img src="/images/Designing-01.png" alt="">
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="btn-prev" onclick="changeSlide('graphics-carousel', 'prev')">&#8249;</button>
+                        <button class="btn-next" onclick="changeSlide('graphics-carousel', 'next')">&#8250;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div id="skills">
+                <h2>Skills</h2>
+                <div class="skills">
+                    <button class="skill-btn" data-skill="Photoshop">Photoshop</button>
+                    <button class="skill-btn" data-skill="Illustrator">Illustrator</button>
+                    <button class="skill-btn" data-skill="HTML">HTML</button>
+                    <button class="skill-btn" data-skill="CSS">CSS</button>
+                    <button class="skill-btn" data-skill="JavaScript">JavaScript</button>
+                </div>
+            </div>
+        
+    </section>
+</div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
