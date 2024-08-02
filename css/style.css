@@ -39,12 +39,14 @@ body {
   }
 #home{
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
-header .navbar {
+.navbar {
+    width: 100vw;
+    padding: 10px;
     display: flex;
     justify-content: center;
-    
+    align-items: center;
 }
 
 .navbar .link {
@@ -58,9 +60,29 @@ header .navbar {
     text-align: center;
     border-radius: 4px;
 }
-
 .navbar .link:hover {
     background-color: lightgray;
+}
+.navbar-toggle {
+    cursor: pointer;
+    padding: 10px;
+    display: none;}
+
+.navbar-toggle span {
+    display: block;
+    height: 2px;
+    background-color: white;
+    margin-bottom: 5px;
+    transition:  0.3s ease-in-out;
+}
+
+.navbar-menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-menu .link {
+    padding: 8px 12px;
 }
 
 .home {
@@ -68,8 +90,8 @@ header .navbar {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    margin-top: 100px;
-    gap: -40vw;
+
+
 }
 
 .home .left {
@@ -154,10 +176,10 @@ header .navbar {
 
 .project-card {
     position: relative;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 8px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    background-color:whitesmoke;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
     padding: 12px;
     margin-bottom: 20px;
     height: 400px;
@@ -310,86 +332,116 @@ header .navbar {
       opacity: 0;
     }
   }
-
-  @media (max-width: 768px) {
-    .navbar .link {
-        font-size: 12px; 
-        margin: 8px; 
-        padding: 6px 8px; 
-    }
-    .home{
+  @media (max-width: 481px) {
+    #home{
+        height: auto;
         display: flex;
+        align-items: center;
         flex-direction: column;
-        margin-top: -50px;
-        gap: -100px;
+        text-align: center;
+
+    }
+    .navbar {
+        flex-direction: column;
+        align-items:flex-start;
+    }
+    .navbar-menu{
+        font-size: 4px;
+    }
+ 
+    .navbar-toggle {
+        display:flex;
+        
+    }
+    .navbar-menu {
+        display: none;
+        width: 40%;
+        flex-direction: row;
+       
+        position: absolute;
+        top: 60px; 
+        left: 0;
+       
+        
+       
+    }
+
+    .navbar-menu.active {
+        display: flex; 
+        flex-direction:column;
+        
+    
+    }
+
+    .navbar-menu .link {
+        margin: 5px 0;
+        font-size: 20px;
+    }
+    .navbar-menu .link.active {
+      
+        font-size: 20px;
+    }
+    .navbar-toggle.active span:nth-child(1) {
+        transform: translateY(5px) rotate(45deg);
+    }
+
+    .navbar-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggle.active span:nth-child(3) {
+        transform: translateY(-5px) rotate(-45deg);
+    }
+    .home {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        margin: 0px;
     }
     .home .left {
-        width: 100%;
+        width: 40%;
         text-align: center;
-    }
-
-    .home .text {
-        font-size: 16px; 
-    }
-
-    .home hr {
-        width: 100%; 
-    }
-
-    .image img {
-        height: 200px;
-        width: 200px;
-    }
-    .left .typewriter{
-        font-size: 10px;
-    }
-
-    .icons .link {
-        font-size: 28px; 
-        margin: 0 8px; 
-    }
-    .projects{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-      
-    }
+        margin-top: -80px;
     
-    .projects .all-projects{
-        display: flex;
-        flex-direction: column;
     }
-    .projects {
-        padding: 30px; 
-    }
-    .project-card {
-        width: 90%; 
-        margin: 20px auto;
-    }
-    .project-info #web{
-        margin-bottom: 30px;
+    .home hr {
+        width: 90%;
     }
 
-    .btn {
-        padding: 10px 20px; 
-        font-size: 12px; 
+    .typewriter{
+        font-size: 12px;
     }
+    .text p{
+        font-size: 30px;
+    }
+   
+    #projects {
+        margin-top: 250px;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        background-color: white; 
+    }
+
 
     #skills {
-        padding: 30px; 
-    }
-    .btn-prev {
-        top:60px;
-        left: 12px;
-    
-    }
-    
-    .btn-next {
-        top:60px;
-   
-        right: 12px; 
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        background-color: white; 
     }
 }
+
+
+
 @media (max-width: 1024px) {
     .navbar .link {
         font-size: 20px;
@@ -402,8 +454,7 @@ header .navbar {
         flex-direction: column;
         margin-top: 150px;
         gap: -100px;
-        font-size: 30px;
-       
+        font-size: 30px; 
     }
 
     .home .left {
