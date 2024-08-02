@@ -15,21 +15,21 @@
       behavior: 'smooth'
     });
   });
-  document.addEventListener('DOMContentLoaded', function() {
+
+  document.addEventListener('DOMContentLoaded', function () {
     const navbarToggle = document.getElementById('navbarToggle');
     const navbarMenu = document.getElementById('navbarMenu');
 
-    navbarToggle.addEventListener('click', function() {
+    navbarToggle.addEventListener('click', function () {
         navbarMenu.classList.toggle('active');
-        navbarToggle.classList.toggle('active');
     });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!navbarMenu.contains(e.target) && !navbarToggle.contains(e.target)) {
+   
+    const menuItems = navbarMenu.querySelectorAll('.link');
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
             navbarMenu.classList.remove('active');
-            navbarToggle.classList.remove('active');
-        }
+        });
     });
 });
 
