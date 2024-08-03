@@ -7,7 +7,7 @@ window.addEventListener('scroll', function() {
     scrollButton.style.display = 'none';
   }
 });
-
+//scroll button
 document.getElementById('scroll-to-top').addEventListener('click', function(e) {
   e.preventDefault();
   window.scrollTo({
