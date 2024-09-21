@@ -1,0 +1,495 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(#003d7a, #000a14);
+}
+
+.landing {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+.nav {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: transparent;
+}
+
+.nav .logo img {
+  color: white;
+  height: 30px;
+  margin-left: 50px;
+}
+
+.nav .menu {
+  display: flex;
+  gap: 10px;
+}
+
+.nav .menu .item .link {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.nav .menu .item .link:hover {
+  background: transparent;
+  border: 1px solid gold;
+  color: white;
+  transform: scale(1.11);
+  transition:  0.5s ease;
+}
+
+#open-menu,
+#close-menu {
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.home .left {
+  width: 50%;
+  text-align: left;
+  margin-top: 80px;
+  margin-left: 200px;
+  color: white;
+}
+
+.home .text {
+  font-size: 43px;
+  font-weight: 600;
+}
+
+.home hr {
+  width: 60%;
+  border-top: 3px solid gold;
+  margin: 20px 0;
+}
+
+.typewriter {
+  margin-top: 20px;
+}
+
+#typewriter-text {
+  font-size: 32px;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid gold;
+  padding-right: 5px;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: none;
+  }
+}
+
+.icons {
+  margin-top: 20px;
+}
+
+.icons .link {
+  font-size: 50px;
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.icons .link:hover {
+  color: gold;
+  transition:  0.3s ease, 0.3s ease;
+}
+
+#scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #2b2d42;
+  color: white;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  z-index: 1000;
+  cursor: pointer;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.4s, background-color 0.3s ease;
+  display: none;
+}
+
+#scroll-to-top span {
+  text-align: center;
+  font-size: 36px;
+}
+
+#scroll-to-top:hover {
+  opacity: 0.8;
+}
+.home .image {
+  width: 50%;
+}
+.image img {
+  width: 350px;
+  border: 4px solid gold;
+  border-radius: 50%;
+  margin-left: 200px;
+}
+.image img:hover {
+  scale: 1.1;
+  transition:  0.3s ease-in, 0.3s ease-out;
+}
+#about {
+  height: 60vh;
+  width: 100%;
+ 
+  background-size: cover;
+  background-repeat: round;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.about-description {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column;
+  width: 40vw;
+  text-align: center;
+  color: white;
+}
+
+#description-text {
+  max-height: 100px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+#description-text.expanded {
+  max-height: 1000px; 
+}
+
+#toggle-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border: 1px solid gold;
+  border-radius: 12px;
+  transition:  0.3s ease;
+}
+
+#toggle-btn:hover {
+  background-color: transparent;
+  color: white;
+  border:1px solid gold;
+  scale: 1.1;
+  transition:  0.3s ease;
+}
+
+
+#projects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+}
+
+#projects h1 {
+  margin-bottom: 50px;
+}
+
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  flex-direction: column;
+  text-align: left;
+}
+
+
+.card {
+  width: 580px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid gold;
+  padding: 20px;
+  max-height: 500px;
+  text-align: center;
+  background-color: #001f3d;
+  margin-top: 10px;
+  transition: scale 0.4s ease-in-out;
+  position: relative;
+}
+
+.card:hover {
+  scale: 1.01;
+}
+
+.card-image {
+  width: 420px;
+  height: 200px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-button {
+  color: white;
+  background-color: #003d7a;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.card-button:hover {
+  border: 1px solid gold;
+  background-color: transparent;
+  scale: 1.01;
+}
+#skills {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  transition:  0.3s ease, color 0.3s ease;
+}
+
+.skills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+#skills h2 {
+  font-size: 30px;
+  color: white;
+}
+
+.skills .skill-btn {
+  position: relative;
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  padding: 10px 10px;
+  background: transparent;
+  margin: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+  box-shadow: 3px 5px rgba(0, 0, 0, 0.3);
+  border-top: 1px solid gold;
+  overflow: hidden;
+  border: 1px solid gold;
+  border-radius: 8px;
+  border: rgba(0, 0, 0, 0.3);
+  transition:  0.3s ease, color 0.3s ease;
+}
+
+.skills .skill-btn:hover {
+  background-color: transparent;
+  border: 1px solid gold;
+  color:white;
+}
+
+.skills .skill-btn .overlay {
+  position: absolute;
+  background: gold;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: blink 0.5s linear;
+}
+
+@keyframes blink {
+  0% {
+      height: 0px;
+      width: 0px;
+      opacity: 0.5;
+  }
+  100% {
+      height: 400px;
+      width: 400px;
+      opacity: 0;
+  }
+}
+#experience {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.timeline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 10%;
+  width: 100%;
+  color: white;
+}
+
+.timeline .row {
+  display: flex;
+  column-gap: 60px;
+  text-align: left;
+}
+
+.column .title {
+  position: relative;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 10px;
+  margin-left: 6%;
+}
+
+.column .timeline-box {
+  border-left: 2px solid gold;
+}
+
+.timeline-box .timeline-content {
+  position: relative;
+  padding-left: 27px;
+  transition:  0.3s ease;
+}
+
+.timeline-box .timeline-content::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: gold;
+  border-radius: 50%;
+  left: -10px;
+}
+
+.timeline-content .content {
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  transition:  0.3s ease;
+  border: 0.3s ease;
+}
+
+.timeline-content.active .content {
+  transform: scale(1.01);
+  border-color: gold;
+}
+
+.content .year {
+  font-size: 16px;
+  color: white;
+}
+
+.content .year i {
+  margin-right: 8px;
+}
+
+.timeline-content .content h3 {
+  font-size: 20px;
+  margin: 8px 0;
+}
+
+.content p {
+  font-size: 16px;
+}
+footer {
+
+  color: white;
+  text-align: center;
+  padding: 20px;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  height: auto;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background-color:#000a14;
+  border-top: 2px solid gold;
+
+}
+
+.footer-content p {
+  margin: 5px 0;
+}

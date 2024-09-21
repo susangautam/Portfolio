@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Gallery</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(#003d7a, #000a14);
+        }
+
+        header {
+            background: #000a14;
+            border-bottom:2px solid gold;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .design-item {
+            width: 400px;
+            height: 400px; 
+            background-color: transparent;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid gold;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+    
+        .design-item:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Design Gallery</h1>
+    </header>
+    
+    <main>
+        <div class="gallery">
+            <div class="design-item" style="background-image: url('design-1.jpg');"></div>
+            <div class="design-item" style="background-image: url('design-2.png');"></div>
+            <div class="design-item" style="background-image: url('design-3.png');"></div>
+            <div class="design-item" style="background-image: url('design-4.jpg');"></div>
+            <div class="design-item" style="background-image: url('design-5.jpg');"></div>
+            <div class="design-item" style="background-image: url('design-6.png');"></div>
+            <div class="design-item" style="background-image: url('design-7.png');"></div>
+            <div class="design-item" style="background-image: url('design-8.png');"></div>
+            <div class="design-item" style="background-image: url('design-9.jpg');"></div>
+            
+           
+            
+        </div>
+    </main>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500) {
+                loadDesigns();
+            }
+        });
+    </script>
+</body>
+</html>

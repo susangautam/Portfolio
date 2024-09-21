@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interior Design</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+body {
+  background: white;
+}
+.landing {
+  background-image: url(hero.jpg);
+  background-size: cover;
+  height: 100vh;
+  color: white;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.section-container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 100%;
+}
+
+.section-title {
+  text-align: center;
+  padding: 60px 0 100px;
+  font-size: 50px;
+  text-transform: uppercase;
+}
+
+.section-title::after {
+  content: "";
+  width: 80px;
+  background: white;
+  height: 5px;
+  display: block;
+  margin: 7px auto 0;
+  border-radius: 6px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+.nav {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.nav .logo .title {
+  color: white;
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.nav .menu {
+  display: flex;
+  gap: 10px;
+}
+
+.nav .menu .item .link {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.nav .menu .item .link:hover {
+  background: transparent;
+  border: 1px solid gray;
+  color: white;
+  scale: 1.1;
+}
+
+#open-menu,
+#close-menu {
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+.hero {
+  margin-left: 130px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  padding-top: 85.12px;
+  min-height: calc(100vh - 85.12px);
+}
+
+.container .details .headline {
+  font-size: 40px;
+  color: white;
+  font-family: "Playwrite CU", cursive;
+  transition: 0.3s ease;
+}
+
+.container .details .subhead {
+  font-size: 18px;
+  font-weight: 300;
+  color: white;
+  margin-top: 8px;
+  max-width: 70%;
+  text-align: center;
+}
+
+.container .details .description {
+  font-size: 14px;
+  font-weight: 300;
+  color: white;
+  margin: 20px 0 40px;
+  max-width: 70%;
+  text-align: center;
+}
+
+.container .buttons {
+  display: flex;
+  gap: 24px;
+}
+
+.container .buttons .button {
+  padding: 8px 28px;
+  border: 2.08px solid transparent;
+  outline: none;
+  cursor: pointer;
+  border-radius: 10px;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  font-weight: 300;
+  transition: 0.3s ease;
+}
+
+.container .buttons .contact {
+  color: white;
+  border-color: white;
+  background: none;
+}
+
+.container .buttons .contact:hover {
+  color: white;
+  border-color: lightgray;
+  background: transparent;
+}
+
+.container .buttons .order:hover {
+  color: white;
+  border-color: white;
+  background: none;
+}
+
+.container .image-wrapper {
+  max-width: 100%;
+}
+
+.container .image-wrapper .image {
+  width: 100%;
+}
+#about {
+  height: 80vh;
+  width: 100%;
+  background: radial-gradient(#141e2f, #050814);
+  background-size: cover;
+  background-repeat: round;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.about-description {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column;
+  width: 40vw;
+  text-align: center;
+  color: #c0c0c0;
+}
+
+#description-text {
+  max-height: 100px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+#description-text.expanded {
+  max-height: 1000px; 
+}
+
+#toggle-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #c0c0c0;
+  border: none;
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 12px;
+  transition: background-color 0.3s;
+}
+
+#toggle-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+#gallery{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: radial-gradient(#141e2f, #050814);
+}
+.main {
+  max-width: 1200px;
+  width: 95%;
+}
+.main h1{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider {
+  position: relative;
+}
+
+.slider .btn-icon {
+  position: absolute;
+  top: 50%;
+  outline: none;
+  border: none;
+  height: 40px;
+  width: 60px;
+  z-index: 5;
+  color: #fff;
+  display: flex;
+  cursor: pointer;
+  font-size: 16px ;
+  background: #474973;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  transform: translateY(-50%);
+}
+
+.slider .btn-icon:hover {
+  background: #141e2f;
+  border: 1px solid gold;
+}
+
+.slider .btn-icon#prev {
+  left: -90px;
+  display: none;
+}
+
+.slider .btn-icon#next {
+  right: -90px;
+}
+
+.slider .list-images {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 18px;
+  font-size: 0;
+  list-style: none;
+  margin-bottom: 30px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.slider .list-images::-webkit-scrollbar {
+  display: none;
+}
+
+.slider .item-image {
+  width: 325px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.scrollbar {
+  height: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.scrollbar .track {
+  background: #ccc;
+  width: 100%;
+  height: 2px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  position: relative;
+}
+
+.scrollbar:hover .track {
+  height: 4px;
+}
+
+.scrollbar .thumb {
+  position: absolute;
+  background: #000;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  height: 100%;
+  cursor: grab;
+  border-radius: inherit;
+}
+
+.scrollbar .thumb:active {
+  cursor: grabbing;
+  height: 8px;
+  top: -2px;
+}
+
+.scrollbar .thumb::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -10px;
+  bottom: -10px;
+}
+
+@media only screen and (max-width: 1023px) {
+  .slider .btn-icon {
+    display: none !important;
+  }
+
+  .slider .list-images {
+    gap: 10px;
+    margin-bottom: 15px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .slider .item-image {
+    width: 280px;
+    height: 380px;
+  }
+
+  .scrollbar .thumb {
+    width: 20%;
+  }
+}
+
+#services {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(#141e2f, #050814);
+  padding: 20px;
+  text-align: center;
+  transition:  0.3s ease, color 0.3s ease;
+  color: white;
+}
+
+.services {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+#services h2 {
+  font-size: 30px;
+}
+
+.services .services-btn {
+  position: relative;
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  padding: 10px 10px;
+  background: transparent;
+  margin: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  box-shadow: 3px 5px rgba(0, 0, 0, 0.3);
+  border-top: 1px solid gold;
+  overflow: hidden;
+  border-radius: 8px;
+  border: none;
+  transition: 0.3s ease, color 0.3s ease;
+}
+
+.services .services-btn:hover {
+  background-color:  #050814;
+  border: 1px solid gold;
+  color:  white;
+}
+
+.services .services-btn .overlay {
+  position: absolute;
+  background: gold;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: blink 0.5s linear;
+}
+@keyframes blink {
+  0% {
+      height: 0px;
+      width: 0px;
+      opacity: 0.5;
+  }
+  100% {
+      height: 400px;
+      width: 400px;
+      opacity: 0;
+  }
+}
+#contact {
+  width: 100%;
+  background: radial-gradient(#141e2f, #050814);
+  padding: 20px 60px 30px 40px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#contact .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin-left: 100px;
+  color: white;
+}
+
+#contact .content .left {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  position: relative;
+}
+
+#contact .content .left::before {
+  content: '';
+  position: absolute;
+  height: 70%;
+  width: 2px;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #afafb6;
+}
+
+#contact .content .left .address,
+#contact .content .left .phone,
+#contact .content .left .email {
+  margin: 14px;
+  text-align: center;
+}
+
+#contact .content .left .address i,
+#contact .content .left .phone i,
+#contact .content .left .email i {
+  font-size: 30px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+#contact .content .left .address .topic,
+#contact .content .left .phone .topic,
+#contact .content .left .email .topic {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+#contact .content .left .address .line-one,
+#contact .content .left .address .line-two,
+#contact .content .left .phone .line-one,
+#contact .content .left .phone .line-two,
+#contact .content .left .email .line-one,
+#contact .content .left .email .line-two {
+  font-size: 14px;
+  color: #afafb6;
+}
+
+#contact .content .right {
+  width: 75%;
+  margin-left: 75px;
+}
+
+#contact .content .right .topic-text {
+  font-size: 23px;
+  font-weight: 600;
+  color: white;
+}
+
+#contact .content .right .input {
+  height: 40px;
+  width: 80%;
+  margin: 22px 0;
+}
+
+#contact .content .right .input input,
+#contact .content .right .message input {
+  height: 100%;
+  width: 80%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: #F0F1F8;
+  border-radius: 6px;
+  padding: 0 15px;
+  resize: none;
+}
+
+#contact .content .right .message {
+ height: 150px;
+}
+
+#contact .content .right .input input {
+  padding-top: 6px;
+}
+
+#contact .content .right .button {
+  display: inline-block;
+  margin-top: 12px;
+}
+
+#contact .content .right .button input[type="button"] {
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: #141e2f;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#contact .content .right .button input[type="button"]:hover {
+  background: transparent;
+  border: 1px solid gold;
+}
+
+@media (max-width: 950px) {
+  #contact {
+    width: 90%;
+    padding: 30px 40px 40px 35px;
+  }
+
+  #contact .content .right {
+    width: 75%;
+    margin-left: 55px;
+  }
+}
+
+@media (max-width: 820px) {
+  #contact {
+    margin: 40px 0;
+    height: 100%;
+  }
+
+  #contact .content {
+    flex-direction: column-reverse;
+  }
+
+  #contact .content .left {
+    width: 100%;
+    flex-direction: row;
+    margin-top: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  #contact .content .left::before {
+    display: none;
+  }
+
+  #contact .content .right {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <div id="home">
+ 
+    <div class="landing">
+      <header class="header">
+        <nav class="nav">
+          <a href="#" class="logo">
+            <h2 class="title">Interior Designs</h2>
+          </a>
+
+          <ul class="menu">
+            <i id="close-menu" class="fa-solid fa-xmark"></i>
+            <li class="item"><a href="#" class="link">Home</a></li>
+            <li class="item"><a href="#about" class="link">About</a></li>
+            <li class="item"><a href="#gallery" class="link">Gallery</a></li>
+            <li class="item"><a href="#services" class="link">Services</a></li>
+            <li class="item"><a href="#contact" class="link">Contact Us</a></li>
+          </ul>
+
+          <i id="open-menu" class="fa-solid fa-bars"></i>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="container">
+          <div class="content">
+            <div class="details">
+              <h2 class="headline">Interior Designs</h2>
+              <h3 class="subhead">Transforming spaces, elevating lives.</h3>
+              <p class="description">
+                Crafting unique interiors that reflect your style and enhance
+                every moment.
+              </p>
+
+              <div class="buttons">
+                <button class="button order">Order Now</button>
+                <button class="button contact">Contact Us</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div id="about">
+    <div class="about-description">
+      <h1>About Us</h1>
+      <p id="description-text">
+        Experience the pinnacle of interior design with a company dedicated to transforming spaces with innovative, high-quality solutions. Our expert team crafts bespoke designs tailored to your unique style, incorporating the latest trends and technologies for a seamless blend of beauty and functionality. We prioritize exceptional craftsmanship and personalized service, managing every detail from concept to completion to ensure a smooth, stress-free process. With a focus on premium materials and enduring design, we create stunning interiors that reflect your individuality and enhance your lifestyle.
+      </p>
+      <button id="toggle-btn">Read More</button>
+    </div>
+  </div>
+
+  <div id="gallery">
+    <div class="main">
+      <h1>Gallery</h1>
+      <div class="slider">
+        <button id="prev" class="btn-icon material-symbols-rounded">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <ul class="list-images">
+          <img class="item-image" src="1.jpg" alt="img-1" />
+          <img class="item-image" src="2.jpg" alt="img-2" />
+          <img class="item-image" src="3.jpg" alt="img-3" />
+          <img class="item-image" src="4.jpg" alt="img-4" />
+          <img class="item-image" src="5.jpg" alt="img-5" />
+          <img class="item-image" src="6.jpg" alt="img-6" />
+          <img class="item-image" src="7.jpg" alt="img-7" />
+          <img class="item-image" src="8.jpg" alt="img-8" />
+          <img class="item-image" src="9.jpg" alt="img-9" />
+          <img class="item-image" src="10.png" alt="img-10" />
+        </ul>
+        <button id="next" class="btn-icon material-symbols-rounded">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+      <div class="scrollbar">
+        <div class="track">
+          <div class="thumb"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div id="services">
+      <h2>Our Services</h2>
+      <div class="services">
+          <button class="services-btn" data-services="Space Planning">Space Planning</button>
+          <button class="services-btn" data-services="Color Consultations">Color Consultations</button>
+          <button class="services-btn" data-services="Furniture Selection">Furniture Selection</button>
+          <button class="services-btn" data-services="Decor Selection">Decor Selection</button>
+          <button class="services-btn" data-services="Lighting Design">Lighting Design</button>
+          <button class="services-btn" data-services="Styling and Accessorizing">Styling and Accessorizing</button>
+          <button class="services-btn" data-services="3D Renderings">Styling and Accessorizing</button>
+      </div>
+
+    </div>
+    
+    <div id="contact">
+      <div class="content">
+        <div class="left">
+          <div class="address">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="topic">Address</div>
+            <div class="line-one">Tilottama</div>
+            <div class="line-two">Rupandehi</div>
+          </div>
+          <div class="phone">
+            <i class="fas fa-phone-alt"></i>
+            <div class="topic">Phone</div>
+            <div class="line-one">+977 9812345678</div>
+            <div class="line-two">+977 9782037281</div>
+          </div>
+          <div class="email">
+            <i class="fas fa-envelope"></i>
+            <div class="topic">Email</div>
+            <div class="line-one">susangautam@email.com</div>
+            <div class="line-two">interior@gmail.com</div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="topic-text">Send us a message</div>
+          <p>Do you want your decor to look faboulous? Contact Us Now</p>
+          <form action="#">
+            <div class="input">
+              <input type="text" placeholder="Enter your name">
+            </div>
+            <div class="input">
+              <input type="text" placeholder="Enter your email">
+            </div>
+            <div class="message">
+              <input type="text" placeholder="Enter your message">
+            </div>
+            <div class="button">
+              <input type="button" value="Send Now">
+            </div>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+
+ 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const openMenu = document.getElementById('open-menu');
+  const closeMenu = document.getElementById('close-menu');
+  const menu = document.querySelector('.nav .menu');
+  const toggleBtn = document.getElementById('toggle-btn');
+  const descriptionText = document.getElementById('description-text');
+
+  openMenu.addEventListener('click', () => {
+    menu.style.display = 'flex';
+    openMenu.style.display = 'none';
+    closeMenu.style.display = 'block';
+  });
+
+  closeMenu.addEventListener('click', () => {
+    menu.style.display = 'none';
+    openMenu.style.display = 'block';
+    closeMenu.style.display = 'none';
+  });
+
+  toggleBtn.addEventListener('click', () => {
+    const isExpanded = descriptionText.classList.toggle('expanded');
+    toggleBtn.textContent = isExpanded ? 'Read Less' : 'Read More';
+  });
+});
+
+const initSlider = () => {
+  const imageList = document.querySelector(".slider .list-images");
+  const slideButtons = document.querySelectorAll(".slider .btn-icon");
+  const sliderScrollbar = document.querySelector(".scrollbar");
+  const scrollbarThumb = sliderScrollbar.querySelector(".thumb");
+  const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
+
+  scrollbarThumb.addEventListener("mousedown", (e) => {
+      const startX = e.clientX;
+      const thumbPosition = scrollbarThumb.offsetLeft;
+      const maxThumbPosition = sliderScrollbar.getBoundingClientRect().width - scrollbarThumb.offsetWidth;
+
+      const handleMouseMove = (e) => {
+          const deltaX = e.clientX - startX;
+          const newThumbPosition = thumbPosition + deltaX;
+
+          const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
+          const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
+          
+          scrollbarThumb.style.left = `${boundedPosition}px`;
+          imageList.scrollLeft = scrollPosition;
+      }
+
+      const handleMouseUp = () => {
+          document.removeEventListener("mousemove", handleMouseMove);
+          document.removeEventListener("mouseup", handleMouseUp);
+      }
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseup", handleMouseUp);
+  });
+
+  slideButtons.forEach(button => {
+      button.addEventListener("click", () => {
+          const direction = button.id === "prev" ? -1 : 1;
+          const scrollAmount = imageList.clientWidth * direction;
+          imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      });
+  });
+
+  const handleSlideButtons = () => {
+      slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "flex";
+      slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
+  }
+
+
+  const updateScrollThumbPosition = () => {
+      const scrollPosition = imageList.scrollLeft;
+      const thumbPosition = (scrollPosition / maxScrollLeft) * (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
+      scrollbarThumb.style.left = `${thumbPosition}px`;
+  }
+  imageList.addEventListener("scroll", () => {
+      updateScrollThumbPosition();
+      handleSlideButtons();
+  });
+}
+window.addEventListener("resize", initSlider);
+window.addEventListener("load", initSlider);
+
+
+let buttons = document.querySelectorAll(".services-btn");
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", (e) => {
+    e.preventDefault();
+    
+    let overlay = document.createElement('span');
+    overlay.classList.add("overlay");
+    e.target.appendChild(overlay);
+    
+    let xValue = e.clientX - e.target.getBoundingClientRect().left;
+    let yValue = e.clientY - e.target.getBoundingClientRect().top;
+    
+    overlay.style.left = xValue + "px";
+    overlay.style.top = yValue + "px";
+    
+    setTimeout(() => {
+      overlay.remove();
+    }, 500);
+  });
+}
+
+  </script>
+</body> 
+</html>

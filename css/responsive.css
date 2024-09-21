@@ -1,0 +1,228 @@
+
+@media (max-width: 767px) {
+  .nav .menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #003d7a;
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+
+  #open-menu {
+    display: block;
+  }
+
+  #close-menu {
+    display: none;
+  }
+
+  .home {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .home .left, .home .image {
+    width: 100%;
+  }
+
+  .image img {
+    width: 150px;
+    height: auto;
+  }
+
+  #about {
+    padding: 10px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .about-description {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+
+  #skills {
+    padding: 8px;
+  }
+
+  .skills .skill-btn {
+    width: 100%;
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .timeline {
+    flex-direction: column;
+  }
+
+  .timeline-box {
+    border-left: none;
+    border-bottom: 2px solid gold;
+    margin: 5px 0;
+    width: 100%;
+  }
+
+  footer {
+    padding: 8px;
+    text-align: center;
+  }
+
+  .footer-socials a {
+    font-size: 16px;
+    margin: 8px;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .nav .menu {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .home {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .home .left, .home .image {
+    width: 50%;
+  }
+
+  .image img {
+    width: 200px;
+  }
+
+  #about {
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .about-description {
+    width: 70%;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+
+  #skills {
+    padding: 15px;
+  }
+
+  .skills .skill-btn {
+    padding: 10px;
+    margin: 4px;
+  }
+
+  .timeline {
+    flex-direction: row;
+  }
+
+  .timeline-box {
+    border-left: 2px solid gold;
+    border-bottom: none;
+    width: 90%;
+  }
+
+  footer {
+    padding: 15px;
+  }
+
+  .footer-socials a {
+    font-size: 20px;
+    margin: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    font-size: 0.8rem;
+  }
+
+  #home, #about, #projects, #experience, footer {
+    padding: 10px;
+    margin: 20px 0;
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .left {
+    width: 100%;
+    margin-right: 170px;
+  }
+  
+  .left .text {
+    margin-right: 200px;
+  }
+
+  .image img {
+    width: 200px;
+    height: 200px;
+    margin: 10px 60px;
+  }
+
+  .about-description, .skills .skill-btn {
+    width: 90%;
+    font-size: 14px;
+    padding: 8px;
+    margin: 10px auto;
+  }
+  
+  .card {
+    height: 330px;
+    width: 350px;
+    font-size: 8px;
+  }
+  
+  .card img {
+    max-width: 100%;
+  }
+  
+  .card button {
+    padding: 4px 8px;
+    margin-top: 6px;
+    font-size: 14px;
+  }
+  
+  #experience {
+    margin-top: 180px;
+    margin-bottom: 110px;
+  }
+
+  .timeline {
+    flex-direction: column;
+  }
+
+  .timeline-box {
+    border-left: none;
+    margin: 15px 0;
+    width: 100%;
+  }
+
+  .timeline .content {
+    width: 100%;
+  }
+
+  .skills .skill-btn {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .footer-socials a {
+    font-size: 16px;
+    margin: 10px;
+  }
+}
