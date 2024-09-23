@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design Gallery</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+             @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
@@ -53,13 +53,32 @@
         .design-item:hover {
             opacity: 0.8;
         }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(1,1fr);
+            }
+            .design-item {
+                height: 500px; 
+                width: 500px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: repeat(1,1fr);
+            }
+            .design-item {
+                height: 360px; 
+                width: 360px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Design Gallery</h1>
     </header>
-    
     <main>
         <div class="gallery">
             <div class="design-item" style="background-image: url('design-1.jpg');"></div>
@@ -71,12 +90,8 @@
             <div class="design-item" style="background-image: url('design-7.png');"></div>
             <div class="design-item" style="background-image: url('design-8.png');"></div>
             <div class="design-item" style="background-image: url('design-9.jpg');"></div>
-            
-           
-            
         </div>
     </main>
-
     <script>
         window.addEventListener('scroll', () => {
             if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500) {
