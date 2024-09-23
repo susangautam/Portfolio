@@ -54,6 +54,25 @@
         .web-item:hover {
             opacity: 0.8;
         }
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(1,1fr);
+            }
+            .web-item {
+                height: 500px; 
+                width: 500px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: repeat(1,1fr);
+            }
+            .web-item {
+                height: 360px; 
+                width: 360px;
+            }
+        }
     </style>
 </head>
 <body>
